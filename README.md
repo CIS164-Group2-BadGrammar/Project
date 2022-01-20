@@ -32,7 +32,7 @@
 11.  To create a branch enter the following command in bash
 > git checkout -b firstName_lastName
 
-12. To switch to a different, already existing branch (like main)
+12. If you want to switch to a different, already existing branch (like main)
 > git checkout main
 
 ### Commits
@@ -51,9 +51,11 @@
 17. In terminal type the following to commit the changes
 > git commit -m "you can type whatever you want in the quotes"
 
-18. Type `git status` one more time if you want to check that its been committed
+18. Type `git status` one more time if you want to check that its been committed (should say 'working tree clean')
 
 19. In terminal type the following to push files to the repo
 > git push origin firstName_lastName 
 
-20. here is a geeks article, but it has a lot of commands that we arent going to use: https://www.geeksforgeeks.org/working-on-git-bash/
+20. You can go to github and click on the branch dropdown (above repo to the right), click on your branch, and your changes should be there now
+
+21. here is a geeks article, but it has a lot of commands that we arent going to use: https://www.geeksforgeeks.org/working-on-git-bash/
