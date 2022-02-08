@@ -8,12 +8,12 @@ using namespace std;
 class Event
 {
 private:
-    string eventName;
-    string eventDescription;
-    bool eventType; //good == true, bad == false;
-    double healthEffect; //effect on health
-    double inventoryEffect; //lose or gain of goods by percent
-    int travelEffect; //delay/shortcut for travel
+    string _eventName;
+    string _eventDescription;
+    bool _eventType; //good == true, bad == false;
+    double _healthEffect; //effect on health
+    double _inventoryEffect; //lose or gain of goods by percent
+    int _travelEffect; //delay/shortcut for travel
 public:
     Event();
     Event(bool, double, double, int);

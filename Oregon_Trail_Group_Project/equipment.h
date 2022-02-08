@@ -8,9 +8,9 @@ using namespace std;
 class Equipment
 {
 private:
-    string equipmentName;
-    string equipmentDescription;
-    double durability;
+    string _equipmentName;
+    string _equipmentDescription;
+    double _durability;
 public:
     Equipment();
     Equipment(string, string,double);

@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <limits>
+#include <vector>
 #include "person.h"
 #include "equipment.h"
 #include "gamelogic.h"
@@ -15,17 +16,25 @@ using namespace std;
 int main()
 {
 
-    int randNumResult;
-    int numRange = 100;
-    int negPosRange = 60;
-    Person test1("John", "Doe", 45);
-    GameLogic num1;
+    vector<Person> wagonParty;
+    vector<Person> wagonParty2;
+    GameLogic gl;
 
-    randNumResult = num1.getRandomNumber(numRange, negPosRange);
+    Person John("John", "Smith", 45);
+    Person Sarah("Sarah", "Smith", 43);
+    Person Billy("Billy", "Smith", 15);
 
-    cout <<endl;
-    test1.display();
-    cout << "Random Num" << randNumResult << endl;
+    wagonParty.push_back(John);
+    wagonParty.push_back(Sarah);
+    wagonParty.push_back(Billy);
+
+    gl.displayWagonParty(wagonParty);
+
+    gl.createWagonParty(wagonParty2);
+    gl.displayWagonParty(wagonParty2);
+
     return 0;
 }
+
+
 
