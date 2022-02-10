@@ -32,4 +32,4 @@ class User {
     int upFood();
     int upGrouping();
     int upMoney();
-};
+}
