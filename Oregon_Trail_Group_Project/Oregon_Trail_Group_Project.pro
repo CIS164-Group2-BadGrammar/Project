@@ -12,6 +12,7 @@ SOURCES += \
         event.cpp \
         gamelogic.cpp \
         main.cpp \
+        nebraska.cpp \
         person.cpp
 
 # Default rules for deployment.
@@ -23,4 +24,5 @@ HEADERS += \
     equipment.h \
     event.h \
     gamelogic.h \
+    nebraska.h \
     person.h
