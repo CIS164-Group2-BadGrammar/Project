@@ -11,6 +11,7 @@ SOURCES += \
         equipment.cpp \
         event.cpp \
         gamelogic.cpp \
+        gamestory.cpp \
         main.cpp \
         nebraska.cpp \
         person.cpp
@@ -24,5 +25,6 @@ HEADERS += \
     equipment.h \
     event.h \
     gamelogic.h \
+    gamestory.h \
     nebraska.h \
     person.h

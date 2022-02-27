@@ -8,14 +8,16 @@ Person::Person()
     _lastName = "";
     _age = 0;
     _health = -1;
+    _isNpc = true;
 
 }
 
-Person::Person(string f, string l, int a)
+Person::Person(string f, string l, int a, bool npc)
 {
     _firstName = f;
     _lastName = l;
     _age = a;
+    _isNpc = npc;
     setHealthInital(a);
 }
 

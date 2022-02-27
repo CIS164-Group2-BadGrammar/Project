@@ -9,29 +9,18 @@
 #include "person.h"
 #include "equipment.h"
 #include "gamelogic.h"
+#include "gamestory.h"
 #include <stdlib.h>
 using namespace std;
 
 
 int main()
 {
-
-    vector<Person> wagonParty;
-    vector<Person> wagonParty2;
-    GameLogic gl;
-
-    Person John("John", "Smith", 45);
-    Person Sarah("Sarah", "Smith", 43);
-    Person Billy("Billy", "Smith", 15);
-
-    wagonParty.push_back(John);
-    wagonParty.push_back(Sarah);
-    wagonParty.push_back(Billy);
-
-    gl.displayWagonParty(wagonParty);
-
-    gl.createWagonParty(wagonParty2);
-    gl.displayWagonParty(wagonParty2);
+    char keyPress;
+    cout << "Press any key to start " << endl;
+    cin >> keyPress;
+    GameStory newGame;
+    // Add uservalidation method to gameLogic
 
     return 0;
 }
