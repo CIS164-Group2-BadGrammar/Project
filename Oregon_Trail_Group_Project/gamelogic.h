@@ -7,6 +7,7 @@
 #define GAMELOGIC_H
 using namespace std;
 template<typename T>
+
 T &userInputValidation(T &cinVal, T lowRange = -10000, T highRange = 10000){
     while(true){
         if(cin >> cinVal){

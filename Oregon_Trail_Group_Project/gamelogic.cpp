@@ -38,12 +38,12 @@ void GameLogic::createWagonParty(vector<Person> &party, bool quickStart){
         cin >> fName;
         cout << "What is your Last Name? " << endl;
         cin >> lName;
-        cout << "What is your Age Name? " << endl;
-        age = userInputValidation(age);
+        cout << "What is your Age Name? (1-100) " << endl;
+        age = userInputValidation(age, 1, 100);
         Person user(fName, lName, age, false);
         party.push_back(user);
-        cout << "How many people in your party? " << endl;
-        cin >> _peopleInParty;
+        cout << "How many people in your party? (1-5) " << endl;
+        _peopleInParty = userInputValidation(age, 1, 5);
         for(int i=1; i< _peopleInParty; i++){
             Person person;
             cout << "Please enter first Name: " << endl;
@@ -52,8 +52,8 @@ void GameLogic::createWagonParty(vector<Person> &party, bool quickStart){
             cout << "Please enter last Name: " << endl;
             cin >> lName;
             person.setLastName(lName);
-            cout << "Please enter age Name: " << endl;
-            cin >> age;
+            cout << "Please enter age Name (1-100): " << endl;
+            age = userInputValidation(age, 1, 100);
             person.setAge(age);
             party.push_back(person);
         }

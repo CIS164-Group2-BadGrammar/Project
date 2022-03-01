@@ -6,13 +6,9 @@
 
 GameStory::GameStory()
 {
-    //SetDifficulty(); //user firsts selects diffulty
+    GameSetup();
+
     // Set starting cash based on difficulty
-    GameSetup(); // Maybe make own class
-        // Create Wagon Party
-        // Might wanna add fields to Person for user vs npc
-        // isUser bool,
-    // "Press any Key to Start"
     // States array (or vec) that calls constructor to initialize events
     // state.runState to call while loop for gameplay
     // Call Nebraska class
@@ -36,13 +32,14 @@ GameStory::GameStory()
 void GameStory::GameSetup(){
     int userQuick;
     cout << "Choose between quickstart or full game: "
-         << "\n\t1 = full game"
-         << "\n\t2 = quickstart" << endl;
-    userQuick = userInputValidation(userQuick, 1, 2);
-    userQuick == 1 ?_difficulty = SetDifficulty() : _difficulty = 2;
-    gl.createWagonParty(_wagonParty, (userQuick == 2));
+         << "\n\t1 = Quick Start"
+         << "\n\t2 = Full Game" << endl;
+    userQuick = userInputValidation(userQuick, QUICK_START, FULL_GAME);
+    userQuick == FULL_GAME ?_difficulty = SetDifficulty() : _difficulty = MEDIUM;
+    gl.createWagonParty(_wagonParty, (userQuick == QUICK_START));
     gl.displayWagonParty(_wagonParty);
-
+    partyInv.generateBaseUserInventory();
+    partyInv.displayInventory();
 }
 
 int GameStory::SetDifficulty(){
@@ -50,7 +47,7 @@ int GameStory::SetDifficulty(){
          << "\n\t1 = Easy"
          << "\n\t2 = Medium"
          << "\n\t3 = Hard" << endl;
-    return userInputValidation(_difficulty, 1, 3);
+    return userInputValidation(_difficulty, EASY, HARD);
 }
 
 GameStory::~GameStory(){}

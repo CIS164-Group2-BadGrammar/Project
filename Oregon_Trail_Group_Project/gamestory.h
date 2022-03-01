@@ -6,24 +6,23 @@
 #include "person.h"
 #include "equipment.h"
 #include "gamelogic.h"
+#include "inventory.h"
 #include <stdlib.h>
 
 class GameStory
 {
 private:
-//    struct partyData;
+    const int QUICK_START = 1, FULL_GAME = 2, EASY = 1, MEDIUM = 2, HARD = 3;
     vector<Person> _wagonParty;
     GameLogic gl;
+    Inventory partyInv;
     float _cash;
     int _difficulty;
 public:
     GameStory();
     void GameSetup();
     int SetDifficulty();
-
-    // Enter location
-        // map of locations: nebraska, utah etc..
-        // vector of events
+    void setInitialCash();
     ~GameStory();
 
 };
