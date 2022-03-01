@@ -9,14 +9,14 @@ using namespace std;
 class Person
 {
 private:
-    string _firstName;
-    string _lastName;
+    string _firstName, _lastName;
     double _health;
     int _age;
+    bool _isNpc;
     map<double, string> skills;
 public:
     Person();
-    Person(string, string, int);
+    Person(string, string, int, bool);
     void setFirstName(string);
     void setLastName(string);
     void setHealthInital(int);

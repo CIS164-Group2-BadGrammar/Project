@@ -3,6 +3,7 @@
 #include <string>
 #include <iomanip>
 using namespace std;
+
 GameLogic::GameLogic()
 {
 }
@@ -29,31 +30,48 @@ int GameLogic::getRandomNumber(int valueRange, int goodBadRange){
     return randNum;
 }
 
-void GameLogic::createWagonParty(vector<Person> &party){
-
-    cout << "How many people in your party? " << endl;
-    cin >> _peopleInParty;
-
-    for(int i=0; i< _peopleInParty; i++){
-        string fName, lName;
-        int age;
-        Person person;
-        cout << "Please enter first Name: " << endl;
+void GameLogic::createWagonParty(vector<Person> &party, bool quickStart){
+    string fName, lName, promptString;
+    int age;
+    if(!quickStart){
+        cout << "What is your first Name? " << endl;
         cin >> fName;
-        person.setFirstName(fName);
-        cout << "Please enter last Name: " << endl;
+        cout << "What is your Last Name? " << endl;
         cin >> lName;
-        person.setLastName(lName);
-        cout << "Please enter age Name: " << endl;
-        cin >> age;
-        person.setAge(age);
-        party.push_back(person);
+        cout << "What is your Age Name? (1-100) " << endl;
+        age = userInputValidation(age, 1, 100);
+        Person user(fName, lName, age, false);
+        party.push_back(user);
+        cout << "How many people in your party? (1-5) " << endl;
+        _peopleInParty = userInputValidation(age, 1, 5);
+        for(int i=1; i< _peopleInParty; i++){
+            Person person;
+            cout << "Please enter first Name: " << endl;
+            cin >> fName;
+            person.setFirstName(fName);
+            cout << "Please enter last Name: " << endl;
+            cin >> lName;
+            person.setLastName(lName);
+            cout << "Please enter age Name (1-100): " << endl;
+            age = userInputValidation(age, 1, 100);
+            person.setAge(age);
+            party.push_back(person);
+        }
+    } else {
+
+        Person John("John", "Smith", 45, true);
+        Person Sarah("Sarah", "Smith", 43, true);
+        Person Billy("Billy", "Smith", 15, true);
+        Person Emma("Emma", "Smith", 12, true);
+        party.push_back(John);
+        party.push_back(Sarah);
+        party.push_back(Billy);
+        party.push_back(Emma);
     }
 }
 
 void GameLogic::displayWagonParty(vector<Person> party){
-    int partySize = party.size();
-    for(int i = 0; i < partySize; i++){
+    for(unsigned int i = 0; i < party.size(); i++){
         party[i].display();
     }
 };
